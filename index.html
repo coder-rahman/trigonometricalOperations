@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="MD Mizanur Rahman">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>trigonometricalOperations</title>
+		<style type="text/css">
+		body{
+			margin:1px;
+			padding:0;
+			background:#158DDD;
+		}
+		table{
+			border:1px solid black;
+			width:90%;
+			height:auto;
+			margin:0 auto;
+			border-collapse:collapse;
+		}
+		table th{
+			font-size:25px;
+			background:black;
+			color:white;
+			line-height:50px;
+		}
+		table tr:nth-child(even){
+			background-color: #F8F8FF;
+		}
+		table tr:nth-child(odd){
+			background-color: #DCDCDC;
+		}
+		th,td{
+			padding:5px;
+			border-collapse:collapse;
+			border:1px solid black;
+			width:90px;
+			height:45px;
+		}
+		input{
+			font-family:"Times New Roman";
+			text-align:center;
+			padding:0;
+			font-size:20px;
+			width:100%;
+			border:none;
+			line-height:60px;
+		}
+		@media only screen and (max-width:600px){
+			input{
+			font-size:13px;
+			line-height:30px;
+			}
+		}
+		p{
+			text-align:center;
+			font-size:22px;
+			font-weight:bold;
+		}
+		#marq{
+			font-family:georgia;
+			color:black;
+			background:white;
+			font-size:22px;
+			line-height:45px;
+			font-family:georgia;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<table>
+		<caption><marquee id="marq">Please insert the geometrical value of angle and see that values in trigonometrical operations</marquee></caption>
+			<tr>
+				<th>Operator </th>
+				<th>Value ( &#176; )</th>
+				<th>Result</th>
+			</tr>
+			<tr>
+				<td><p>Sin &#952;</p></td>
+				<td><input type="number" id="inpSin" onchange="sinFunction()" placeholder="Insert angle value & press Enter"/></td>
+				<td><p id="resultSin"></p></td>
+			</tr>
+			<tr>
+				<td><p>Cos &#952;</p></td>
+				<td><input type="number" id="inpCos" onchange="cosFunction()" placeholder="Insert angle value & press Enter"/></td>
+				<td><p id="resultCos"></p></td>
+			</tr>
+			<tr>
+				<td><p>tan &#952;</p></td>
+				<td><input type="number" id="inpTan" onchange="tanFunction()" placeholder="Insert angle value & press Enter"/></td>
+				<td><p id="resultTan"></p></td>
+			</tr>
+			<tr>
+				<td><p>Cot &#952;</p></td>
+				<td><input type="number" id="inpCot" onchange="cotFunction()" placeholder="Insert angle value & press Enter"/></td>
+				<td><p id="resultCot"></p></td>
+			</tr>
+			<tr>
+				<td><p>Sec &#952;</p></td>
+				<td><input type="number" id="inpSec" onchange="secFunction()" placeholder="Insert angle value & press Enter"/></td>
+				<td><p id="resultSec"></p></td>
+			</tr>
+			<tr>
+				<td><p>Cosec &#952;</p></td>
+				<td><input type="number" id="inpCosec" onchange="cosecFunction()" placeholder="Insert angle value & press Enter"/></td>
+				<td><p id="resultCosec"></p></td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript">
+		function sinFunction(){
+			var sinVal=parseInt(document.getElementById('inpSin').value);
+			var sinMethod=Math.sin(sinVal*Math.PI/180);
+			var sinFinal=sinMethod.toFixed(2);
+			document.getElementById('resultSin').innerHTML= sinFinal;
+			}
+			function cosFunction(){
+			var cosVal=parseInt(document.getElementById('inpCos').value);
+			var cosMethod=Math.cos(cosVal*Math.PI/180);
+			var cosFinal=cosMethod.toFixed(2);
+			document.getElementById('resultCos').innerHTML= cosFinal;
+			}
+			function tanFunction(){
+			var tanVal=parseInt(document.getElementById('inpTan').value);
+			var tanValEqual=Math.sin(tanVal*Math.PI/180)/Math.cos(tanVal*Math.PI/180);
+			var tanFinal=tanValEqual.toFixed(2);
+			document.getElementById('resultTan').innerHTML= tanFinal;
+			}
+			function cotFunction(){
+			var cotVal=parseInt(document.getElementById('inpCot').value);
+			var cotValEqual=Math.cos(cotVal*Math.PI/180)/Math.sin(cotVal*Math.PI/180);
+			var cotFinal=cotValEqual.toFixed(2);
+			document.getElementById('resultCot').innerHTML= cotFinal;
+			}
+			function secFunction(){
+			var secVal=parseInt(document.getElementById('inpSec').value);
+			var secValEqual=1/Math.cos(secVal*Math.PI/180);
+			var secFinal=secValEqual.toFixed(2);
+			document.getElementById('resultSec').innerHTML= secFinal;
+			}
+			function cosecFunction(){
+			var cosecVal=parseInt(document.getElementById('inpCosec').value);
+			var cosecValEqual=1/Math.sin(cosecVal*Math.PI/180);
+			var cosecFinal=cosecValEqual.toFixed(2);
+			document.getElementById('resultCosec').innerHTML= cosecFinal;
+			}
+		</script>
+	</body>
+</html>
